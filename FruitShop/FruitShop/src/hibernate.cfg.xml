@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 基本信息 -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sc?useUnicode=true&amp;characterEncoding=gbk</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">12345678</property>
+		<!-- 使事务自动提交 -->
+		<property name="hibernate.connection.autocommit">true</property>
+		<!-- 配置 -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.show_sql">true</property>
+		
+		<mapping class="po.Users"/>
+		<mapping class="po.Carts"/>
+		<mapping class="po.Levels"/>
+		<mapping class="po.Orders"/>
+		<mapping class="po.Favorites"/>
+		<mapping class="po.Kinds"/>
+		<mapping class="po.Manufacturers"/>
+		<mapping class="po.Favorites"/>
+		<mapping class="po.Fruits"/>
+		
+	</session-factory>
+</hibernate-configuration>

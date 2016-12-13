@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:p="http://www.springframework.org/schema/p"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		                    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		                    http://www.springframework.org/schema/context 
+		                    http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		                    http://www.springframework.org/schema/tx 
+		                    http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+		                    http://www.springframework.org/schema/aop 
+		                    http://www.springframework.org/schema/aop/spring-aop-3.1.xsd"
+							default-autowire="byName"		                  
+		                   >
+		       
+	
+	        
+		                   
+	<context:annotation-config/>
+	<context:component-scan base-package="service"/>
+	<context:component-scan base-package="dao"/>
+	<context:component-scan base-package="action"/>
+
+	<!-- 1 配置sessionFactory -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+    <property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+	<bean id="userDao" class="dao.impl.UserDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	 <!-- 事务管理器 -->    
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+<property name="sessionFactory" ref="sessionFactory"/>
+</bean> 
+  
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">    
+        <tx:attributes>    
+            <tx:method name="save*" propagation="REQUIRED" />    
+            <tx:method name="add*" propagation="REQUIRED" />    
+            <tx:method name="update*" propagation="REQUIRED" />    
+            <tx:method name="del*" propagation="REQUIRED" />    
+            <!--hibernate4必须配置为开启事务 否则 getCurrentSession()获取不到-->    
+            <tx:method name="find*" propagation="REQUIRED" read-only="true" />  
+        </tx:attributes>    
+    </tx:advice>    
+    <aop:config expose-proxy="true">    
+        <!-- 只对业务逻辑层实施事务 -->    
+        <aop:pointcut id="txPointcut" expression="execution(* cn.net.comsys.ut.service.impl.*.*(..))" />    
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>    
+    </aop:config>    
+
+
+</beans>
+

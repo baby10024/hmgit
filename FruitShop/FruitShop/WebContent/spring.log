@@ -1,0 +1,89 @@
+00:54:26,174 INFO  [org.springframework.context.support.ClassPathXmlApplicationContext] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@d448a1: startup date [Wed Oct 26 00:54:26 CST 2016]; root of context hierarchy
+00:54:26,238 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] Loading XML bean definitions from class path resource [applicationContext.xml]
+00:54:26,967 INFO  [org.springframework.beans.factory.support.DefaultListableBeanFactory] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1ac6103: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,service.ICourseService,service.IDeptService,dao.ICourseDao,dao.IDepartmentDao,adminAction1,cdAction,studentAction,studentForm,sessionFactory,studentDao,courseDao,studentService,scService,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor]; root of factory hierarchy
+00:54:27,105 INFO  [org.hibernate.cfg.Environment] Hibernate 3.5.6-Final
+00:54:27,108 INFO  [org.hibernate.cfg.Environment] hibernate.properties not found
+00:54:27,111 INFO  [org.hibernate.cfg.Environment] Bytecode provider name : javassist
+00:54:27,115 INFO  [org.hibernate.cfg.Environment] using JDK 1.4 java.sql.Timestamp handling
+00:54:27,325 INFO  [org.hibernate.cfg.Configuration] configuring from url: file:/C:/Users/hou/%e4%bb%a3%e7%a0%81/java%20Web/SpringProject01/build/classes/hibernate.cfg.xml
+00:54:27,411 INFO  [org.hibernate.cfg.Configuration] Reading mappings from resource : po/Student.hbm.xml
+00:54:27,513 INFO  [org.hibernate.cfg.HbmBinder] Mapping class: po.Student -> student
+00:54:27,711 INFO  [org.hibernate.cfg.HbmBinder] Mapping collection: po.Student.courses -> sc
+00:54:27,713 INFO  [org.hibernate.cfg.Configuration] Reading mappings from resource : po/Address.hbm.xml
+00:54:27,746 INFO  [org.hibernate.cfg.HbmBinder] Mapping class: po.Address -> address
+00:54:27,747 INFO  [org.hibernate.cfg.Configuration] Reading mappings from resource : po/Department.hbm.xml
+00:54:27,763 INFO  [org.hibernate.cfg.HbmBinder] Mapping class: po.Department -> department
+00:54:27,764 INFO  [org.hibernate.cfg.Configuration] Reading mappings from resource : po/Course.hbm.xml
+00:54:27,791 INFO  [org.hibernate.cfg.HbmBinder] Mapping class: po.Course -> Course
+00:54:27,792 INFO  [org.hibernate.cfg.HbmBinder] Mapping collection: po.Course.students -> sc
+00:54:27,792 INFO  [org.hibernate.cfg.Configuration] Configured SessionFactory: null
+00:54:27,793 INFO  [org.hibernate.cfg.HbmBinder] Mapping collection: po.Department.students -> student
+00:54:27,793 INFO  [org.springframework.orm.hibernate3.LocalSessionFactoryBean] Building new Hibernate SessionFactory
+00:54:27,803 INFO  [org.hibernate.connection.DriverManagerConnectionProvider] Using Hibernate built-in connection pool (not for production use!)
+00:54:27,803 INFO  [org.hibernate.connection.DriverManagerConnectionProvider] Hibernate connection pool size: 20
+00:54:27,803 INFO  [org.hibernate.connection.DriverManagerConnectionProvider] autocommit mode: true
+00:54:27,810 INFO  [org.hibernate.connection.DriverManagerConnectionProvider] using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost:3306/sc?useUnicode=true&characterEncoding=gbk
+00:54:27,810 INFO  [org.hibernate.connection.DriverManagerConnectionProvider] connection properties: {user=root, password=****, autocommit=true}
+00:54:28,124 INFO  [org.hibernate.cfg.SettingsFactory] RDBMS: MySQL, version: 5.7.10-log
+00:54:28,124 INFO  [org.hibernate.cfg.SettingsFactory] JDBC driver: MySQL-AB JDBC Driver, version: mysql-connector-java-5.1.10 ( Revision: ${svn.Revision} )
+00:54:28,211 INFO  [org.hibernate.dialect.Dialect] Using dialect: org.hibernate.dialect.MySQL5Dialect
+00:54:28,216 INFO  [org.hibernate.engine.jdbc.JdbcSupportLoader] Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+00:54:28,216 INFO  [org.hibernate.transaction.TransactionFactoryFactory] Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+00:54:28,218 INFO  [org.hibernate.transaction.TransactionManagerLookupFactory] No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+00:54:28,218 INFO  [org.hibernate.cfg.SettingsFactory] Automatic flush during beforeCompletion(): disabled
+00:54:28,218 INFO  [org.hibernate.cfg.SettingsFactory] Automatic session close at end of transaction: disabled
+00:54:28,218 INFO  [org.hibernate.cfg.SettingsFactory] JDBC batch size: 15
+00:54:28,218 INFO  [org.hibernate.cfg.SettingsFactory] JDBC batch updates for versioned data: disabled
+00:54:28,218 INFO  [org.hibernate.cfg.SettingsFactory] Scrollable result sets: enabled
+00:54:28,219 INFO  [org.hibernate.cfg.SettingsFactory] JDBC3 getGeneratedKeys(): enabled
+00:54:28,219 INFO  [org.hibernate.cfg.SettingsFactory] Connection release mode: auto
+00:54:28,219 INFO  [org.hibernate.cfg.SettingsFactory] Maximum outer join fetch depth: 2
+00:54:28,220 INFO  [org.hibernate.cfg.SettingsFactory] Default batch fetch size: 1
+00:54:28,220 INFO  [org.hibernate.cfg.SettingsFactory] Generate SQL with comments: disabled
+00:54:28,220 INFO  [org.hibernate.cfg.SettingsFactory] Order SQL updates by primary key: disabled
+00:54:28,220 INFO  [org.hibernate.cfg.SettingsFactory] Order SQL inserts for batching: disabled
+00:54:28,220 INFO  [org.hibernate.cfg.SettingsFactory] Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+00:54:28,221 INFO  [org.hibernate.hql.ast.ASTQueryTranslatorFactory] Using ASTQueryTranslatorFactory
+00:54:28,221 INFO  [org.hibernate.cfg.SettingsFactory] Query language substitutions: {}
+00:54:28,222 INFO  [org.hibernate.cfg.SettingsFactory] JPA-QL strict compliance: disabled
+00:54:28,222 INFO  [org.hibernate.cfg.SettingsFactory] Second-level cache: enabled
+00:54:28,222 INFO  [org.hibernate.cfg.SettingsFactory] Query cache: disabled
+00:54:28,222 INFO  [org.hibernate.cfg.SettingsFactory] Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+00:54:28,222 INFO  [org.hibernate.cfg.SettingsFactory] Optimize cache for minimal puts: disabled
+00:54:28,222 INFO  [org.hibernate.cfg.SettingsFactory] Structured second-level cache entries: disabled
+00:54:28,236 INFO  [org.hibernate.cfg.SettingsFactory] Echoing all SQL to stdout
+00:54:28,237 INFO  [org.hibernate.cfg.SettingsFactory] Statistics: disabled
+00:54:28,237 INFO  [org.hibernate.cfg.SettingsFactory] Deleted entity synthetic identifier rollback: disabled
+00:54:28,237 INFO  [org.hibernate.cfg.SettingsFactory] Default entity-mode: pojo
+00:54:28,237 INFO  [org.hibernate.cfg.SettingsFactory] Named query checking : enabled
+00:54:28,237 INFO  [org.hibernate.cfg.SettingsFactory] Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+00:54:28,293 INFO  [org.hibernate.impl.SessionFactoryImpl] building session factory
+00:54:28,517 INFO  [org.hibernate.impl.SessionFactoryObjectFactory] Not binding factory to JNDI, no JNDI name configured
+00:54:28,522 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] Running hbm2ddl schema update
+00:54:28,522 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] fetching database metadata
+00:54:28,523 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] updating schema
+00:54:28,554 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] table found: sc.sc
+00:54:28,554 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] columns: [student_id, course_id]
+00:54:28,554 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] foreign keys: [fke5039f84ec9, fke5089f14acb]
+00:54:28,554 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] indexes: [fke5039f84ec9, primary, fke5089f14acb]
+00:54:28,566 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] table found: sc.course
+00:54:28,566 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] columns: [id, name, credit]
+00:54:28,566 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] foreign keys: []
+00:54:28,566 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] indexes: [primary]
+00:54:28,591 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] table found: sc.address
+00:54:28,591 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] columns: [id, area, street, number, city]
+00:54:28,591 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] foreign keys: []
+00:54:28,591 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] indexes: [primary]
+00:54:28,611 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] table found: sc.department
+00:54:28,611 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] columns: [id, name]
+00:54:28,611 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] foreign keys: []
+00:54:28,611 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] indexes: [primary]
+00:54:28,618 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] table found: sc.student
+00:54:28,619 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] columns: [id, sid, sex, age, name, dept, password]
+00:54:28,619 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] foreign keys: [fk8ffe823b1a00c906, fk8ffe823b19d3878f]
+00:54:28,619 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] indexes: [primary, fk8ffe823b1a00c906, fk8ffe823b19d3878f]
+00:54:28,620 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] schema update complete
+00:54:28,912 INFO  [org.springframework.beans.factory.support.DefaultListableBeanFactory] Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1ac6103: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,service.ICourseService,service.IDeptService,dao.ICourseDao,dao.IDepartmentDao,adminAction1,cdAction,studentAction,studentForm,sessionFactory,studentDao,courseDao,studentService,scService,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor]; root of factory hierarchy
+00:54:28,913 INFO  [org.springframework.orm.hibernate3.LocalSessionFactoryBean] Closing Hibernate SessionFactory
+00:54:28,913 INFO  [org.hibernate.impl.SessionFactoryImpl] closing
+00:54:28,913 INFO  [org.hibernate.connection.DriverManagerConnectionProvider] cleaning up connection pool: jdbc:mysql://localhost:3306/sc?useUnicode=true&characterEncoding=gbk
