@@ -25,6 +25,13 @@ public class BaseAction<T> extends ActionSupport implements RequestAware,Session
     protected Map<String, Object> application;  
     
     protected T model;
+    
+  //page和rows和分页有关，pageMap存放查询的数据，然后打包成json格式用的
+  	//page和rows实现get和set方法，pageMap只需要实现get方法即可，因为pageMap不是接收前台参数的，是让struts获取的
+  	protected Integer page;
+  	protected Integer rows;
+  	protected Map<String, Object> pageMap = null;
+  	
     @Resource
     protected UserService userService;
     
@@ -54,5 +61,31 @@ public class BaseAction<T> extends ActionSupport implements RequestAware,Session
             throw new RuntimeException(e);  
         }     
         return model;  
-    } 
+    }
+
+	public Integer getPage() {
+		return page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+	}
+
+	public Integer getRows() {
+		return rows;
+	}
+
+	public void setRows(Integer rows) {
+		this.rows = rows;
+	}
+
+	public Map<String, Object> getPageMap() {
+		return pageMap;
+	}
+
+	public void setPageMap(Map<String, Object> pageMap) {
+		this.pageMap = pageMap;
+	} 
+    
+    
 }  
